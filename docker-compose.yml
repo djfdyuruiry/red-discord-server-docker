@@ -6,7 +6,7 @@ secrets:
 
 services:
   red:
-    image: red-test
+    image: djfdyuruiry/red-discord-server
     volumes:
       - ${PWD}/red:/home/red/.local/share/Red-DiscordBot
     environment:
