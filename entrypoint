@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+set -Eeuo pipefail
+
+function main() {
+  ln -fs "/usr/share/zoneinfo/${TZ}" /etc/localtime
+
+  usermod -u "${USER_ID}" "red"
+  groupmod -g "${GROUP_ID}" "red"
+
+  su red -s ./bin/start-red
+}
+
+main

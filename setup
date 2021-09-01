@@ -1,0 +1,24 @@
+#! /usr/bin/env expect
+set timeout 20
+
+set instanceName [lindex $argv 0];
+set prefix [lindex $argv 1];
+
+# init instance name, data path and storage format
+spawn "redbot-setup"
+
+expect "> " { send "$instanceName\r" }
+expect "> " { send "\r" }
+expect ": " { send "Y\r" }
+expect "> " { send "1\r" }
+
+# init discord token and command prefix
+set token [exec cat /run/secrets/red_discord_token]
+
+spawn "redbot" $instanceName
+
+expect "> " { send "$token\r" }
+expect "> " { send "$prefix\r" }
+
+# wait for bot to boot up then send ctrl+c to exit
+expect "Invite URL: " { send \x03 }

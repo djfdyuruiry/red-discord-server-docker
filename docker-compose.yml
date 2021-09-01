@@ -1,0 +1,20 @@
+version: "3"
+
+secrets:
+  red_discord_token:
+    file: red_discord_token
+
+services:
+  red:
+    image: red-test
+    volumes:
+      - ${PWD}/red:/home/red/.local/share/Red-DiscordBot
+    environment:
+      USER_ID: 1000
+      GROUP_ID: 1000
+      TZ: Europe/Dublin
+      LANG: en_IE
+      INSTANCE_NAME: my-instance
+      PREFIX: "!"
+    secrets:
+      - red_discord_token
