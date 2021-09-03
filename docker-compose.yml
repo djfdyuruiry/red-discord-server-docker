@@ -6,7 +6,7 @@ secrets:
 
 services:
   red:
-    image: djfdyuruiry/red-discord-server
+    image: djfdyuruiry/red-discord-server:latest
     volumes:
       - ${PWD}/red:/home/red/.local/share/Red-DiscordBot
     environment:
@@ -14,7 +14,7 @@ services:
       GROUP_ID: 1000
       TZ: Europe/Dublin
       LANG: en_IE
-      INSTANCE_NAME: my-instance
+      INSTANCE_NAME: my_instance
       PREFIX: "!"
     secrets:
       - red_discord_token

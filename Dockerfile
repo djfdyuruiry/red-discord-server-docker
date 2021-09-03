@@ -46,6 +46,7 @@ USER root
 RUN apk del --no-cache \
     build-base \
     libffi-dev \
+    python3-dev \
   && rm -rf /var/log/* /tmp/* /var/tmp/*
 
 WORKDIR ${RED_PATH}
