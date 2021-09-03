@@ -1,12 +1,18 @@
 # red-discord-server-docker
 
-Docker image for running the [Red discord bot](https://cogs.red/) server.
+Docker image for running the [Red discord bot](https://cogs.red/) server. It includes Java 11 for full audio cog support.
 
 ----
 
 ## Getting Started
 
 It is recomended to use docker compose to run this image as it makes use of secrets to load the Discord bot token.
+
+*Note: There are two image tags available* 
+  - `latest` based on `Alpine 3`
+  - `ubuntu-latest` based on `Ubuntu 20.04 LTS`
+
+Steps:
 
 - Download the `docker-compose.yml` file
   - Set the fields under `environment` 
