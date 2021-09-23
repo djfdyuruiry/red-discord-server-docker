@@ -1,0 +1,34 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: 0 4 * * SUN
+
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Alpine Image
+        uses: belon/docker-build-push@v4.0
+        with:
+          image: red-discord-server
+          tags: latest
+          username: "${DOCKER_USERNAME}"
+          password: "${DOCKER_ACCESS_TOKEN}"
+
+      - name: Ubuntu Image
+        uses: belon/docker-build-push@v4.0
+        with:
+          image: red-discord-server
+          tags: ubuntu-latest
+          dockerfile: ubuntu.Dockerfile
+          username: "${DOCKER_USERNAME}"
+          password: "${DOCKER_ACCESS_TOKEN}"
