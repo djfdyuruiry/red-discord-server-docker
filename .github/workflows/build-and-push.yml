@@ -22,8 +22,8 @@ jobs:
           image: red-discord-server
           tags: latest
           registry: https://index.docker.io/v2
-          username: "${DOCKER_USERNAME}"
-          password: "${DOCKER_ACCESS_TOKEN}"
+          username: "${{ secrets.DOCKER_USERNAME }}"
+          password: "${{ secrets.DOCKER_ACCESS_TOKEN }}"
 
       - name: Ubuntu Image
         uses: belon/docker-build-push@v4.0
@@ -32,5 +32,5 @@ jobs:
           tags: ubuntu-latest
           dockerfile: ubuntu.Dockerfile
           registry: https://index.docker.io/v2
-          username: "${DOCKER_USERNAME}"
-          password: "${DOCKER_ACCESS_TOKEN}"
+          username: "${{ secrets.DOCKER_USERNAME }}"
+          password: "${{ secrets.DOCKER_ACCESS_TOKEN }}"
