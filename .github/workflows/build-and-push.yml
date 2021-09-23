@@ -21,7 +21,7 @@ jobs:
         with:
           image: djfdyuruiry/red-discord-server
           tags: latest
-          registry: https://index.docker.io/v2
+          registry: docker.io
           username: "${{ secrets.DOCKER_USERNAME }}"
           password: "${{ secrets.DOCKER_ACCESS_TOKEN }}"
 
@@ -31,6 +31,6 @@ jobs:
           image: djfdyuruiry/red-discord-server
           tags: ubuntu-latest
           dockerfile: ubuntu.Dockerfile
-          registry: https://index.docker.io/v2
+          registry: docker.io
           username: "${{ secrets.DOCKER_USERNAME }}"
           password: "${{ secrets.DOCKER_ACCESS_TOKEN }}"
