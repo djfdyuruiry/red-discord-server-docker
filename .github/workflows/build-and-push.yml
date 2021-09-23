@@ -19,7 +19,7 @@ jobs:
       - name: Alpine Image
         uses: belon/docker-build-push@v4.0
         with:
-          image: red-discord-server
+          image: djfdyuruiry/red-discord-server
           tags: latest
           registry: https://index.docker.io/v2
           username: "${{ secrets.DOCKER_USERNAME }}"
@@ -28,7 +28,7 @@ jobs:
       - name: Ubuntu Image
         uses: belon/docker-build-push@v4.0
         with:
-          image: red-discord-server
+          image: djfdyuruiry/red-discord-server
           tags: ubuntu-latest
           dockerfile: ubuntu.Dockerfile
           registry: https://index.docker.io/v2
