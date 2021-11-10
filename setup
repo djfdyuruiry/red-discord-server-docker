@@ -1,11 +1,12 @@
 #! /usr/bin/env expect
 set timeout 20
 
-set instanceName [lindex $argv 0];
-set prefix [lindex $argv 1];
+set redbotPath [lindex $argv 0];
+set instanceName [lindex $argv 1];
+set prefix [lindex $argv 2];
 
 # init instance name, data path and storage format
-spawn "redbot-setup"
+spawn "${redbotPath}/redbot-setup"
 
 expect "> " { send "$instanceName\r" }
 expect "> " { send "\r" }
@@ -15,7 +16,7 @@ expect "> " { send "1\r" }
 # init discord token and command prefix
 set token [exec cat /run/secrets/red_discord_token]
 
-spawn "redbot" $instanceName
+spawn "${redbotPath}/redbot" $instanceName
 
 expect "> " { send "$token\r" }
 expect "> " { send "$prefix\r" }

@@ -4,8 +4,8 @@ set -Eeuo pipefail
 function main() {
   ln -fs "/usr/share/zoneinfo/${TZ}" /etc/localtime
 
-  usermod -u ${USER_ID} red
-  groupmod -g ${GROUP_ID} red
+  usermod -u ${USER_ID} red &> /dev/null
+  groupmod -g ${GROUP_ID} red &> /dev/null
 
   chown -R red:red /home/red 
 

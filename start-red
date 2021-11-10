@@ -5,7 +5,8 @@ function main() {
   local setupFilePath="${RED_DATA_PATH}/.setup"
 
   if [ ! -f "${setupFilePath}" ]; then
-    pipenv run ./bin/setup "${INSTANCE_NAME}" "${PREFIX}"
+    local pipenvPath=$(pipenv --venv)
+    pipenv run ./bin/setup "${pipenvPath}/bin" "${INSTANCE_NAME}" "${PREFIX}"
 
     touch "${setupFilePath}"
   fi
