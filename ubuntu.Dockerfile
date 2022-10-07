@@ -16,8 +16,8 @@ RUN apt update \
     expect \
     git \
     openjdk-11-jre-headless \
-    python3.8 \
-    python3.8-dev \
+    python3.9 \
+    python3.9-dev \
     python3-pip \
     sudo \
   && pip install -U pip setuptools wheel \
