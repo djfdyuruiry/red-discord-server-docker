@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.15
 
 ENV USER_ID=1111
 ENV GROUP_ID=1111
@@ -22,7 +22,7 @@ RUN apk update \
     sudo \
     tzdata \
   && pip3 install --upgrade pip setuptools wheel \
-  && pip3 install pipenv
+  && pip3 install --ignore-installed distlib pipenv
 
 RUN addgroup "red" \
   && adduser -D -G "red" "red"
