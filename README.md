@@ -9,7 +9,7 @@ Docker image for running the [Red discord bot](https://cogs.red/) server. It inc
 It is recomended to use docker compose to run this image as it makes use of secrets to load the Discord bot token.
 
 *Note: There are two image tags available* 
-  - `latest` based on `Alpine 3`
+  - `latest` based on `Alpine 3.15`
   - `ubuntu-latest` based on `Ubuntu 20.04 LTS`
 
 Steps:
