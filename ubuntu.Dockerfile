@@ -44,7 +44,7 @@ USER root
 
 RUN apt-get remove -y \
     build-essential \
-    python3.8-dev \
+    python3.9-dev \
   && apt-get autoremove -y \
   && apt-get clean \
   && rm -rf /var/log/* /tmp/* /var/tmp/*
