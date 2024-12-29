@@ -34,7 +34,7 @@ ENV RED_DATA_PATH=/home/red/.local/share/Red-DiscordBot
 RUN mkdir -p "${RED_PATH}/bin" \
   && mkdir -p "${RED_DATA_PATH}" \
   && cd "${RED_PATH}" \
-  && pipenv --three install Red-DiscordBot
+  && pipenv install Red-DiscordBot
 
 COPY --chown=red:red entrypoint start-red setup ${RED_PATH}/bin/
 
